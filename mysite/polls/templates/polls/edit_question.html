@@ -1,0 +1,10 @@
+<form action="{% url 'polls:user_edit_question' question.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>{{ question.question_text }}</h1></legend>
+        <h4>Enter your editable Question:</h4>
+        <!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
+        <input type="text" name="user_edit_question" value="{{ question.id }}">
+    </fieldset>
+    <input type="submit" value="Edit">
+</form>
